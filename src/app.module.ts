@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { DishModule } from './dish/dish.module';
 import { APP_FILTER } from '@nestjs/core';
 import { CustomExceptionFilter } from './filters/custom-filter';
+import { IngredientModule } from './ingredient/ingredient.module';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ dotenv.config();
     ),
     UserModule,
     DishModule,
+    IngredientModule,
   ],
   controllers: [],
   providers: [
