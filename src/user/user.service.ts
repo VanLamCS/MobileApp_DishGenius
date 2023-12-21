@@ -74,4 +74,9 @@ export class UserService {
     await user.save();
     return user;
   }
+
+  async get(userId: string) {
+    const user = await this.userModel.findById(userId)
+    return user;
+  }
 }

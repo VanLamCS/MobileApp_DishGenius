@@ -11,7 +11,7 @@ import { DetectIngredientsDto } from './ingredient.dto';
 import { IngredientService } from './ingredient.service';
 import { ApiResponse } from 'src/utils/api-response';
 
-@Controller()
+@Controller('api')
 @ApiTags('Ingredient')
 export class IngredientController {
   constructor(private readonly ingredientService: IngredientService) {}

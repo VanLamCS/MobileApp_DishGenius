@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Get,
   HttpCode,
   HttpStatus,
   Patch,
@@ -79,6 +80,26 @@ export class UserController {
       { user: userData, token: token },
       'Login successfully',
     );
+  }
+
+  @Get('user/info')
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard)
+  async getInfo(@Req() req: any) {
+    const userId = req.user.userId;
+    const user = await this.userService.get(userId);
+    if (user) {
+      return CustomApiResponse.success(
+        {
+          userId: user._id,
+          email: user.email,
+          name: user.name,
+          phone: user.phone,
+        },
+        'Retrieved user info success',
+      );
+    }
+    return CustomApiResponse.error(400, 'User info not found');
   }
 
   @Patch('user/edit-profile')
