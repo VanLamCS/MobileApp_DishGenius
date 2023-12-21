@@ -3,7 +3,7 @@ import { GetDishesDto } from './dish.dto';
 import axios from 'axios';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Favorite } from './favorite.shema';
+import { Favorite } from './favorite.schema';
 
 @Injectable()
 export class DishService {

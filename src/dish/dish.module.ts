@@ -3,7 +3,7 @@ import { DishController } from './dish.controller';
 import { DishService } from './dish.service';
 import { JwtService } from '@nestjs/jwt';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Favorite, FavoriteSchema } from './favorite.shema';
+import { Favorite, FavoriteSchema } from './favorite.schema';
 
 @Module({
   imports: [
