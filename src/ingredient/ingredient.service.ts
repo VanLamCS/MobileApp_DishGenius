@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
+import 'multer';
 
 @Injectable()
 export class IngredientService {

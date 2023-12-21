@@ -1,13 +1,12 @@
 import {
-  Body,
   Controller,
-  Get,
   Post,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
+import 'multer';
 import { DetectIngredientsDto } from './ingredient.dto';
 import { IngredientService } from './ingredient.service';
 import { ApiResponse } from 'src/utils/api-response';
