@@ -1,5 +1,6 @@
 import {
   Controller,
+  Get,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -26,5 +27,15 @@ export class IngredientController {
       { ingredients: Array.from(res) },
       'Detected ingredients',
     );
+  }
+
+  @Get('detect-info')
+  detectInfo() {
+    return ApiResponse.success({
+      uri: 'https://api.logmeal.es/v2/image/segmentation/complete/v1.0',
+      method: 'POST',
+      LOG_MEAL_TOKEN: process.env.LOG_MEAL_TOKEN,
+      document: 'https://api.logmeal.es/docs'
+    })
   }
 }
